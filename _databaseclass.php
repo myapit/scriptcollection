@@ -11,6 +11,8 @@ class database {
 	private $queryset   = '';
 	private $resultset  = '';
 
+	## private mysqli = ''; -- SOON TO MODIFY TO SUPPORT MYSQLi
+
 	public function __construct($cfg)
 	{
 		$this->db_host = $cfg['hostname'];
@@ -21,6 +23,8 @@ class database {
 		if ($this->connect() == false) {
 			die('Connection to '. $cfg['hostname'] .' for database '. $cfg['database'].' failed.');
 		}
+
+		## $this->mysqli = new mysqli(); --COMING SOON
 	}
 
 	private function connect()
